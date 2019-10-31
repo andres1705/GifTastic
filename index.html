@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>GifTastic</title>
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css"
+  
+
+</head>
+<body>
+
+        <div id="a"></div>
+        <input type="text" id="animal_name">
+        <input type="submit" id="submit" value="submit">
+        
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type = text/javascript>
+   // $("button").on("click", function() {
+           
+        //const animal = $(this).attr("animal_name");
+        //const queryURL = `https://api.giphy.com/v1/gifs/search?q=${animal}&api_key=WvUQZMM34uQOQ24obthwMwiURqOjYXVM=10`;
+
+       // $.ajax({
+        //url: queryURL,
+        //method: "GET"
+      //})
+
+
+        $(document).ready(function(){
+        var animal_arr = ["tiger","lion","dog","cat"];
+        $("#submit").on("click", function(){
+            var temp = $("#animal_name").val();
+            $("#animal_name").val("");
+            animal_arr.push(temp);
+            $("#a").empty();
+            
+            for(var i=0;i<animal_arr.length;i++)
+          {
+              var b = $("<button>");
+            b.attr("data-name",animal_arr[i]);
+            b.text(animal_arr[i]);
+            $("#a").append(b);
+          }
+            
+        })
+          
+          for(var i=0;i<animal_arr.length;i++)
+          {
+              var b = $("<button>");
+            b.attr("data-name",animal_arr[i]);
+            b.text(animal_arr[i]);
+            $("#a").append(b);
+          }
+        });
+
+
+    //});
+     </script>
+        
+    
+        
+        
+        
+     </body>
+</html>
+        
+
+
+
+
+
+
+
+
+
